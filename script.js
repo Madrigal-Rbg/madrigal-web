@@ -412,58 +412,75 @@
   /* ============================================================
      BUILD DOM
      ============================================================ */
+  // Builders are hydration-aware: if the container is already populated (the
+  // cards are pre-rendered into the static HTML for crawlers/no-JS), they adopt
+  // the existing nodes and just wire up the language updaters — no duplication.
   function buildAI() {
     var grid = $("#aiGrid");
     if (!grid) return;
-    AI_CAPS.forEach(function (c) {
-      var el = document.createElement("article");
-      el.className = "glass-card ai-card tilt reveal";
-      el.innerHTML =
-        '<div class="ai-card__glyph">' + glyph(c.g) + "</div>" +
-        '<span class="tag"></span><h3></h3><p></p>';
+    var pre = grid.children.length >= AI_CAPS.length;
+    AI_CAPS.forEach(function (c, i) {
+      var el;
+      if (pre) { el = grid.children[i]; }
+      else {
+        el = document.createElement("article");
+        el.className = "glass-card ai-card tilt reveal";
+        el.innerHTML =
+          '<div class="ai-card__glyph">' + glyph(c.g) + "</div>" +
+          '<span class="tag"></span><h3></h3><p></p>';
+        grid.appendChild(el);
+      }
       var tag = el.querySelector(".tag"), h3 = el.querySelector("h3"), p = el.querySelector("p");
       dynUpdaters.push(function () {
         tag.textContent = t("ai.tag");
         h3.textContent = c[LANG].t;
         p.textContent = c[LANG].d;
       });
-      grid.appendChild(el);
     });
   }
 
   function buildHosting() {
     var grid = $("#hostingGrid");
     if (!grid) return;
-    HOSTING.forEach(function (c) {
-      var el = document.createElement("article");
-      el.className = "glass-card ai-card tilt reveal";
-      el.innerHTML =
-        '<div class="ai-card__glyph">' + glyph(c.g) + "</div>" +
-        '<span class="tag"></span><h3></h3><p></p>';
+    var pre = grid.children.length >= HOSTING.length;
+    HOSTING.forEach(function (c, i) {
+      var el;
+      if (pre) { el = grid.children[i]; }
+      else {
+        el = document.createElement("article");
+        el.className = "glass-card ai-card tilt reveal";
+        el.innerHTML =
+          '<div class="ai-card__glyph">' + glyph(c.g) + "</div>" +
+          '<span class="tag"></span><h3></h3><p></p>';
+        grid.appendChild(el);
+      }
       var tag = el.querySelector(".tag"), h3 = el.querySelector("h3"), p = el.querySelector("p");
       dynUpdaters.push(function () {
         tag.textContent = c[LANG].tag;
         h3.textContent = c[LANG].t;
         p.textContent = c[LANG].d;
       });
-      grid.appendChild(el);
     });
   }
 
   function buildServices() {
     var ul = $("#serviceRows");
     if (!ul) return;
+    var pre = ul.children.length >= SERVICES.length;
     SERVICES.forEach(function (s, i) {
-      var li = document.createElement("li");
-      li.className = "row reveal";
-      var idx = ("0" + (i + 1)).slice(-2);
-      var bodyId = "row-body-" + (i + 1);
-      li.innerHTML =
-        '<button type="button" class="row__top" aria-expanded="false" aria-controls="' + bodyId + '">' +
-        '<span class="row__idx">' + idx + "</span>" +
-        '<h3 class="row__title"></h3>' +
-        '<span class="row__plus" aria-hidden="true">+</span></button>' +
-        '<div class="row__body" id="' + bodyId + '"><p></p></div>';
+      var li, idx = ("0" + (i + 1)).slice(-2), bodyId = "row-body-" + (i + 1);
+      if (pre) { li = ul.children[i]; }
+      else {
+        li = document.createElement("li");
+        li.className = "row reveal";
+        li.innerHTML =
+          '<button type="button" class="row__top" aria-expanded="false" aria-controls="' + bodyId + '">' +
+          '<span class="row__idx">' + idx + "</span>" +
+          '<h3 class="row__title"></h3>' +
+          '<span class="row__plus" aria-hidden="true">+</span></button>' +
+          '<div class="row__body" id="' + bodyId + '"><p></p></div>';
+        ul.appendChild(li);
+      }
       var title = li.querySelector(".row__title"), body = li.querySelector(".row__body p");
       dynUpdaters.push(function () {
         title.textContent = s[LANG].t;
@@ -474,64 +491,82 @@
         var open = li.classList.toggle("open");
         btn.setAttribute("aria-expanded", open ? "true" : "false");
       });
-      ul.appendChild(li);
     });
   }
 
   function buildWhy() {
     var grid = $("#whyGrid");
     if (!grid) return;
-    WHY.forEach(function (w) {
-      var el = document.createElement("article");
-      el.className = "glass-card tilt reveal";
-      el.innerHTML = "<h3></h3><p></p>";
+    var pre = grid.children.length >= WHY.length;
+    WHY.forEach(function (w, i) {
+      var el;
+      if (pre) { el = grid.children[i]; }
+      else {
+        el = document.createElement("article");
+        el.className = "glass-card tilt reveal";
+        el.innerHTML = "<h3></h3><p></p>";
+        grid.appendChild(el);
+      }
       var h3 = el.querySelector("h3"), p = el.querySelector("p");
       dynUpdaters.push(function () {
         h3.textContent = w[LANG].t;
         p.textContent = w[LANG].d;
       });
-      grid.appendChild(el);
     });
   }
 
   function buildFlow() {
     var ol = $("#flow");
     if (!ol) return;
-    var fill = document.createElement("span");
-    fill.className = "flow__fill";
-    ol.appendChild(fill);
-    PROCESS.forEach(function (p) {
-      var li = document.createElement("li");
-      li.className = "flow__node reveal";
-      li.innerHTML =
-        '<span class="flow__dot" aria-hidden="true"></span>' +
-        '<span class="flow__idx">' + p.i + "</span>" +
-        '<h3 class="flow__title"></h3><p></p>';
+    var existing = ol.querySelectorAll(".flow__node");
+    var pre = existing.length >= PROCESS.length;
+    if (!pre) {
+      var fill = document.createElement("span");
+      fill.className = "flow__fill";
+      ol.appendChild(fill);
+    }
+    PROCESS.forEach(function (p, i) {
+      var li;
+      if (pre) { li = existing[i]; }
+      else {
+        li = document.createElement("li");
+        li.className = "flow__node reveal";
+        li.innerHTML =
+          '<span class="flow__dot" aria-hidden="true"></span>' +
+          '<span class="flow__idx">' + p.i + "</span>" +
+          '<h3 class="flow__title"></h3><p></p>';
+        ol.appendChild(li);
+      }
       var h3 = li.querySelector(".flow__title"), pp = li.querySelector("p");
       dynUpdaters.push(function () {
         h3.textContent = p[LANG].t;
         pp.textContent = p[LANG].d;
       });
-      ol.appendChild(li);
     });
   }
 
   function buildOffices() {
     var wrap = $("#offices");
     if (!wrap) return;
-    OFFICES.forEach(function (o) {
-      var el = document.createElement("article");
-      el.className = "office-card reveal";
-      el.innerHTML =
-        '<div class="office-card__media">' +
-        '<img loading="lazy" decoding="async" src="' + o.photo + '" alt="" />' +
-        '<img class="office-card__skyline" src="' + o.skyline + '" alt="" aria-hidden="true" loading="lazy" decoding="async" />' +
-        '</div>' +
-        '<div class="office-card__body">' +
-        '<p class="office-card__role"></p>' +
-        '<h3 class="office-card__city"></h3>' +
-        '<p class="office-card__line"></p>' +
-        '</div>';
+    var pre = wrap.children.length >= OFFICES.length;
+    OFFICES.forEach(function (o, i) {
+      var el;
+      if (pre) { el = wrap.children[i]; }
+      else {
+        el = document.createElement("article");
+        el.className = "office-card reveal";
+        el.innerHTML =
+          '<div class="office-card__media">' +
+          '<img loading="lazy" decoding="async" src="' + o.photo + '" alt="" />' +
+          '<img class="office-card__skyline" src="' + o.skyline + '" alt="" aria-hidden="true" loading="lazy" decoding="async" />' +
+          '</div>' +
+          '<div class="office-card__body">' +
+          '<p class="office-card__role"></p>' +
+          '<h3 class="office-card__city"></h3>' +
+          '<p class="office-card__line"></p>' +
+          '</div>';
+        wrap.appendChild(el);
+      }
       var img = el.querySelector(".office-card__media img");
       var role = el.querySelector(".office-card__role");
       var city = el.querySelector(".office-card__city");
@@ -542,7 +577,6 @@
         line.textContent = o[LANG].line;
         img.setAttribute("alt", o[LANG].alt);
       });
-      wrap.appendChild(el);
     });
   }
 
