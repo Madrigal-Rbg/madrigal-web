@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found — Madrigal Consulting</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#060A14" />
+  <link rel="icon" type="image/png" sizes="196x196" href="assets/favicon-196.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .nf{min-height:100vh;display:grid;place-items:center;text-align:center;padding:2rem;position:relative;overflow:hidden;
+      background:radial-gradient(ellipse 100% 80% at 50% 40%,#0A1530 0%,#05080F 75%);}
+    .nf__inner{position:relative;z-index:2;max-width:600px;}
+    .nf__logo{height:46px;width:auto;margin:0 auto 2.4rem;filter:drop-shadow(0 0 16px rgba(35,180,236,.45)) drop-shadow(0 1px 2px rgba(0,0,0,.5));}
+    .nf__code{font-family:var(--font-display);font-weight:700;font-size:clamp(4.5rem,18vw,9rem);line-height:1;letter-spacing:-.03em;margin:0 0 .6rem;}
+    .nf__eyebrow{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 1.6rem;}
+    .nf p{color:var(--muted);font-size:1.1rem;line-height:1.7;margin:0 0 2.2rem;}
+    .nf p .alt{display:block;opacity:.65;font-size:.98rem;margin-top:.35rem;}
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <div class="aurora" aria-hidden="true"><span class="blob blob--1"></span><span class="blob blob--3"></span></div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="nf__inner">
+      <img class="nf__logo" src="assets/logo.png" alt="Madrigal Consulting" />
+      <p class="nf__eyebrow">// SIGNAL LOST</p>
+      <h1 class="nf__code gradient-text gradient-text--drift">404</h1>
+      <p>
+        This page drifted off the map. Let's get you back to base.
+        <span class="alt">Questa pagina si è persa per strada. Torniamo alla base.</span>
+      </p>
+      <a class="btn btn--gradient" href="/">Back to home · Torna alla home</a>
+    </div>
+  </main>
+</body>
+</html>

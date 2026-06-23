@@ -29,7 +29,7 @@
 }
 
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth;scroll-padding-top:88px;}
 body{
   margin:0;
   background:var(--bg);
@@ -50,6 +50,12 @@ a:hover{color:#7fd6ff;}
   background:var(--bg2);color:var(--text);padding:.7rem 1.1rem;border-radius:0 0 10px 0;
 }
 .skip-link:focus{left:0;}
+
+/* Visually-hidden but available to assistive tech (e.g. canvas descriptions). */
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
 
 :focus-visible{
   outline:2px solid var(--cyan);
@@ -161,7 +167,7 @@ a:hover{color:#7fd6ff;}
      alongside the inert attribute toggled in JS). */
   max-height:0;overflow:hidden;visibility:hidden;transition:max-height .35s ease,visibility 0s linear .35s;
 }
-.mobile-menu.open{max-height:480px;visibility:visible;transition:max-height .35s ease,visibility 0s;}
+.mobile-menu.open{max-height:min(480px,85vh);overflow-y:auto;visibility:visible;transition:max-height .35s ease,visibility 0s;}
 .mobile-menu nav{display:flex;flex-direction:column;padding:1rem clamp(1.2rem,4vw,2.5rem) 1.6rem;gap:.3rem;}
 .mobile-menu a{color:var(--text);padding:.85rem 0;font-size:1.05rem;border-bottom:1px solid rgba(120,170,255,0.08);}
 .mobile-menu .btn{margin-top:1rem;}
@@ -227,7 +233,7 @@ a:hover{color:#7fd6ff;}
 .hero__title{
   font-family:var(--font-display);font-weight:700;
   font-size:clamp(2.6rem,6.5vw,5.4rem);
-  line-height:1.02;letter-spacing:-.02em;margin:0 0 1.4rem;
+  line-height:1.04;letter-spacing:-.02em;margin:0 0 1.4rem;
 }
 .hero__sub{font-size:clamp(1.1rem,2vw,1.4rem);font-weight:500;color:var(--text);margin:0 0 2rem;max-width:54ch;}
 .hero__cta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.6rem;}
@@ -424,7 +430,9 @@ a:hover{color:#7fd6ff;}
 }
 .row__body p{margin:1rem 0 0;max-width:70ch;padding-left:2.2rem;}
 .row.open .row__plus{transform:rotate(45deg);color:var(--cyan);}
-.row.open .row__body{max-height:240px;}
+.row.open .row__body{max-height:420px;}
+/* Keyboard focus for the accordion trigger (it's a reset <button>). */
+.row__top:focus-visible{outline:2px solid var(--cyan);outline-offset:-4px;border-radius:8px;}
 
 /* ============================================================
    WHY GRID
@@ -500,7 +508,7 @@ a:hover{color:#7fd6ff;}
   transition:border-color .25s,box-shadow .25s;resize:vertical;
 }
 .field input:focus,.field textarea:focus{outline:none;border-color:var(--cyan);box-shadow:var(--glow-soft);}
-.field input::placeholder,.field textarea::placeholder{color:#5d6f93;}
+.field input::placeholder,.field textarea::placeholder{color:#8294B8;}
 .field input:invalid:not(:placeholder-shown){border-color:rgba(255,120,120,0.5);}
 .contact-form__actions{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;}
 .contact-form__note{font-family:var(--font-mono);font-size:.8rem;color:var(--muted);margin:0;}
@@ -651,7 +659,7 @@ a:hover{color:#7fd6ff;}
   display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;
   padding-left:clamp(1.2rem,4vw,2.5rem);padding-right:clamp(1.2rem,4vw,2.5rem);
 }
-.band__item{display:flex;flex-direction:column;gap:.6rem;}
+.band__item{display:flex;flex-direction:column;gap:.6rem;min-width:0;}
 .band__v{font-family:var(--font-display);font-weight:700;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1;}
 .band__l{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
 
@@ -663,7 +671,7 @@ a:hover{color:#7fd6ff;}
 .footer__inner{position:relative;z-index:1;display:grid;grid-template-columns:1.6fr 1fr 1fr 1.4fr;gap:2rem;padding-top:4rem;padding-bottom:3rem;}
 .footer__logo{height:48px;width:auto;filter:drop-shadow(0 0 14px rgba(35,180,236,0.4)) drop-shadow(0 1px 2px rgba(0,0,0,0.5));margin-bottom:1rem;}
 .footer__brand p{color:var(--muted);max-width:34ch;font-size:.95rem;}
-.footer__col h3{font-family:var(--font-display);font-weight:500;font-size:1rem;margin:0 0 1rem;}
+.footer__col h3{font-family:var(--font-display);font-weight:600;font-size:1rem;margin:0 0 1rem;}
 .footer__col a{display:block;color:var(--muted);font-size:.92rem;padding:.3rem 0;}
 .footer__col a:hover{color:var(--cyan);}
 .footer__addr{color:var(--muted);font-size:.92rem;margin:0 0 .8rem;}
@@ -688,6 +696,18 @@ a:hover{color:#7fd6ff;}
    ============================================================ */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;}
 .reveal.in{opacity:1;transform:none;}
+
+/* Staggered reveal: card/list children cascade in rather than popping together,
+   which reads as deliberate choreography. Children enter the viewport roughly
+   in sync (same grid), so the per-item delay produces the cascade. */
+.manifesto__cards>.reveal:nth-child(2),.ai-grid>.reveal:nth-child(2),.why-grid>.reveal:nth-child(2),.offices>.reveal:nth-child(2),#serviceRows>.reveal:nth-child(2){transition-delay:.07s;}
+.manifesto__cards>.reveal:nth-child(3),.ai-grid>.reveal:nth-child(3),.why-grid>.reveal:nth-child(3),.offices>.reveal:nth-child(3),#serviceRows>.reveal:nth-child(3){transition-delay:.14s;}
+.ai-grid>.reveal:nth-child(4),.why-grid>.reveal:nth-child(4),#serviceRows>.reveal:nth-child(4){transition-delay:.21s;}
+.ai-grid>.reveal:nth-child(5),#serviceRows>.reveal:nth-child(5){transition-delay:.28s;}
+.ai-grid>.reveal:nth-child(6),#serviceRows>.reveal:nth-child(6){transition-delay:.35s;}
+.ai-grid>.reveal:nth-child(7){transition-delay:.42s;}
+.ai-grid>.reveal:nth-child(8){transition-delay:.49s;}
+.ai-grid>.reveal:nth-child(9){transition-delay:.56s;}
 
 /* ============================================================
    RESPONSIVE
@@ -721,6 +741,9 @@ a:hover{color:#7fd6ff;}
      let the 1fr track shrink and the long words wrap. */
   .row__top{gap:.8rem;}
   .row__title{min-width:0;overflow-wrap:anywhere;}
+  /* Long service descriptions can exceed the desktop cap on a narrow column. */
+  .row.open .row__body{max-height:70vh;overflow-y:auto;}
+  .band__v{font-size:clamp(1.5rem,7vw,2.2rem);}
 }
 
 /* ============================================================

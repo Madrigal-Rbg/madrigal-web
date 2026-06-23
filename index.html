@@ -9,11 +9,45 @@
   <meta name="theme-color" content="#060A14" />
   <link rel="canonical" href="https://madrigalconsulting.io/" />
 
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Madrigal Consulting Limited",
+    "alternateName": "Madrigal Consulting",
+    "url": "https://madrigalconsulting.io/",
+    "logo": "https://madrigalconsulting.io/assets/logo.png",
+    "image": "https://madrigalconsulting.io/assets/og-image.png",
+    "description": "Premium creative, technology and AI consultancy with three equal hubs in Hong Kong, Switzerland and Italy. We architect generative AI, autonomous agents, brand worlds, and engineering — delivered worldwide.",
+    "email": "hello@madrigalconsulting.io",
+    "slogan": "Unlocking Minds, Driving Brands",
+    "areaServed": "Worldwide",
+    "knowsLanguage": ["en", "it"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "hello@madrigalconsulting.io",
+      "availableLanguage": ["en", "it"]
+    },
+    "address": [
+      { "@type": "PostalAddress", "addressLocality": "Hong Kong", "addressCountry": "HK" },
+      { "@type": "PostalAddress", "addressLocality": "Lugano", "addressCountry": "CH" },
+      { "@type": "PostalAddress", "addressLocality": "Milan", "addressCountry": "IT" }
+    ]
+  }
+  </script>
+
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Madrigal Consulting — We Architect Intelligence" />
   <meta property="og:description" content="A premium creative, technology, and AI consultancy with hubs in Hong Kong, Switzerland and Italy. Unlocking Minds, Driving Brands — at planetary scale." />
-  <meta property="og:image" content="https://madrigalconsulting.io/assets/logo.png" />
+  <meta property="og:image" content="https://madrigalconsulting.io/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Madrigal Consulting — We Architect Intelligence" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:locale:alternate" content="it" />
   <meta property="og:url" content="https://madrigalconsulting.io/" />
   <meta property="og:site_name" content="Madrigal Consulting" />
 
@@ -21,7 +55,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Madrigal Consulting — We Architect Intelligence" />
   <meta name="twitter:description" content="A premium creative, technology, and AI consultancy across Hong Kong, Switzerland and Italy. Unlocking Minds, Driving Brands." />
-  <meta name="twitter:image" content="https://madrigalconsulting.io/assets/logo.png" />
+  <meta name="twitter:image" content="https://madrigalconsulting.io/assets/og-image.png" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="196x196" href="assets/favicon-196.png" />
@@ -98,7 +132,7 @@
         <span class="blob blob--5"></span>
       </div>
       <canvas class="hero__dust" id="dustCanvas" aria-hidden="true"></canvas>
-      <img class="hero__accent" src="assets/img/hero-network.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <img class="hero__accent" src="assets/img/hero-network.svg" alt="" aria-hidden="true" decoding="async" />
       <div class="grid-overlay" aria-hidden="true"></div>
 
       <div class="hero__inner">
@@ -127,7 +161,8 @@
 
         <!-- Intelligence Orbit -->
         <div class="orbit" id="orbit" aria-label="Intelligence Orbit — the nine AI capabilities orbiting the Madrigal core">
-          <canvas id="orbitCanvas"></canvas>
+          <canvas id="orbitCanvas" aria-hidden="true"></canvas>
+          <p class="sr-only" data-i18n="orbit.sr">The Intelligence Orbit shows Madrigal's nine AI capabilities orbiting the core: Generative AI, Machine Learning and Deep Learning, Natural Language Processing, Computer Vision, Predictive Analytics, Autonomous Agents, RAG Systems, MLOps, and AI Strategy.</p>
           <div class="orbit__core" aria-hidden="true">
             <img src="assets/logo.png" alt="" class="orbit__core-mark" />
           </div>

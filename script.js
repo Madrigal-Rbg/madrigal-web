@@ -55,6 +55,7 @@
       "academy.pill": "Our developers are all certified by Anthropic Academy",
       "academy.badge": "Anthropic Academy Certified Engineers",
       "academy.strip": "Every developer at Madrigal is certified by Anthropic Academy — frontier-trained to build with Claude and architect production-grade AI that thinks, reasons, and ships. Credentialed expertise, not improvisation.",
+      "orbit.sr": "The Intelligence Orbit shows Madrigal's nine AI capabilities orbiting the core: Generative AI, Machine Learning and Deep Learning, Natural Language Processing, Computer Vision, Predictive Analytics, Autonomous Agents, RAG Systems, MLOps, and AI Strategy.",
 
       "marquee": "GENERATIVE AI · LLM APPS · COMPUTER VISION · NLP · RAG SYSTEMS · MLOps · AUTONOMOUS AGENTS · PREDICTIVE ANALYTICS · DEEP LEARNING · AI STRATEGY · ",
 
@@ -194,6 +195,7 @@
       "academy.pill": "I nostri sviluppatori sono tutti certificati Anthropic Academy",
       "academy.badge": "Ingegneri Certificati Anthropic Academy",
       "academy.strip": "Ogni sviluppatore di Madrigal è certificato Anthropic Academy — formato alla frontiera per costruire con Claude e progettare AI production-grade che pensa, ragiona e va in produzione. Competenza certificata, non improvvisazione.",
+      "orbit.sr": "L'Orbita dell'Intelligenza mostra le nove competenze AI di Madrigal che orbitano attorno al nucleo: AI Generativa, Machine Learning e Deep Learning, Natural Language Processing, Visione Artificiale, Analisi Predittiva, Agenti Autonomi, Sistemi RAG, MLOps e Strategia AI.",
 
       "marquee": "AI GENERATIVA · APP LLM · COMPUTER VISION · NLP · SISTEMI RAG · MLOps · AGENTI AUTONOMI · ANALISI PREDITTIVA · DEEP LEARNING · STRATEGIA AI · ",
 
