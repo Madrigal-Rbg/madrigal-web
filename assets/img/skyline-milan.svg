@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" role="img" aria-label="Minimalist Milan skyline with Duomo silhouette">
+  <defs>
+    <linearGradient id="mi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#23B4EC"/><stop offset="1" stop-color="#0C5FB0"/>
+    </linearGradient>
+    <linearGradient id="miw" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1379C2" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#6E8BFF" stop-opacity="0.22"/>
+    </linearGradient>
+  </defs>
+  <g fill="url(#mi)">
+    <!-- modern Porta Nuova towers (left) -->
+    <rect x="60" y="180" width="36" height="140"/>
+    <polygon points="110,320 110,120 128,96 146,120 146,320"/>
+    <rect x="160" y="200" width="30" height="120"/>
+    <!-- Unicredit-like spire -->
+    <polygon points="210,320 210,140 222,140 222,70 230,70 230,320"/>
+    <rect x="250" y="210" width="40" height="110"/>
+
+    <!-- Duomo (center): tiered spired cathedral -->
+    <g>
+      <rect x="380" y="240" width="240" height="80"/>
+      <!-- main central spire (Madonnina) -->
+      <polygon points="496,240 496,90 500,78 504,90 504,240"/>
+      <circle cx="500" cy="74" r="4"/>
+      <!-- flanking spires -->
+      <polygon points="430,240 436,150 442,240"/>
+      <polygon points="458,240 464,135 470,240"/>
+      <polygon points="530,240 536,135 542,240"/>
+      <polygon points="558,240 564,150 570,240"/>
+      <polygon points="404,240 410,170 416,240"/>
+      <polygon points="584,240 590,170 596,240"/>
+      <!-- arched facade hint -->
+      <rect x="486" y="270" width="28" height="50"/>
+    </g>
+
+    <!-- right side modern blocks -->
+    <rect x="660" y="200" width="34" height="120"/>
+    <rect x="704" y="170" width="40" height="150"/>
+    <polygon points="760,320 760,130 776,108 792,130 792,320"/>
+    <rect x="806" y="200" width="36" height="120"/>
+    <rect x="852" y="180" width="44" height="140"/>
+    <rect x="908" y="220" width="32" height="100"/>
+  </g>
+  <rect x="0" y="322" width="1000" height="38" fill="url(#miw)"/>
+</svg>

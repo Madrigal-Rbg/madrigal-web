@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madrigal Consulting — We Architect Intelligence | AI, Creative &amp; Tech Consultancy</title>
+  <meta name="description" content="Madrigal Consulting is a premium creative, technology, and AI consultancy with three equal hubs in Hong Kong, Switzerland and Italy. We architect generative AI, autonomous agents, brand worlds, and engineering — delivered worldwide." />
+  <meta name="author" content="Madrigal Consulting Limited" />
+  <meta name="theme-color" content="#060A14" />
+  <link rel="canonical" href="https://madrigalconsulting.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Madrigal Consulting — We Architect Intelligence" />
+  <meta property="og:description" content="A premium creative, technology, and AI consultancy with hubs in Hong Kong, Switzerland and Italy. Unlocking Minds, Driving Brands — at planetary scale." />
+  <meta property="og:image" content="https://madrigalconsulting.io/assets/logo.png" />
+  <meta property="og:url" content="https://madrigalconsulting.io/" />
+  <meta property="og:site_name" content="Madrigal Consulting" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Madrigal Consulting — We Architect Intelligence" />
+  <meta name="twitter:description" content="A premium creative, technology, and AI consultancy across Hong Kong, Switzerland and Italy. Unlocking Minds, Driving Brands." />
+  <meta name="twitter:image" content="https://madrigalconsulting.io/assets/logo.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="196x196" href="assets/favicon-196.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-196.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#hero" aria-label="Madrigal Consulting — home">
+        <img class="nav__logo" src="assets/logo.png" alt="Madrigal Consulting logo" width="160" height="44" />
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#ai" data-i18n="nav.ai">AI</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#software" data-i18n="nav.software">Software</a>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#process" data-i18n="nav.approach">Approach</a>
+        <a href="#global" data-i18n="nav.reach">Reach</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="true">EN</button>
+        <span class="lang-switch__sep" aria-hidden="true">|</span>
+        <button type="button" class="lang-switch__btn" data-lang="it" aria-pressed="false">IT</button>
+      </div>
+
+      <a class="btn btn--gradient nav__cta" href="#contact" data-i18n="nav.cta">Start a project</a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" data-i18n-attr="aria-label:nav.open">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
+      <nav aria-label="Mobile">
+        <a href="#ai" data-i18n="nav.ai">AI</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#software" data-i18n="nav.software">Software</a>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#process" data-i18n="nav.approach">Approach</a>
+        <a href="#global" data-i18n="nav.reach">Reach</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <div class="lang-switch lang-switch--mobile" role="group" aria-label="Language">
+          <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="true">EN</button>
+          <span class="lang-switch__sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-switch__btn" data-lang="it" aria-pressed="false">IT</button>
+        </div>
+        <a class="btn btn--gradient" href="#contact" data-i18n="nav.cta">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="aurora" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+        <span class="blob blob--4"></span>
+        <span class="blob blob--5"></span>
+      </div>
+      <canvas class="hero__dust" id="dustCanvas" aria-hidden="true"></canvas>
+      <img class="hero__accent" src="assets/img/hero-network.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      <div class="grid-overlay" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">// MADRIGAL · HONG KONG · SWITZERLAND · ITALY</p>
+          <h1 class="hero__title">
+            <span data-i18n="hero.title1">We don't just use AI.</span><br />
+            <span class="gradient-text gradient-text--drift" data-i18n="hero.title2">We architect intelligence.</span>
+          </h1>
+          <p class="hero__sub" data-i18n="hero.sub">A premium creative, technology &amp; AI consultancy with three equal hubs across Asia and Europe. From electric brand worlds to autonomous AI systems, we engineer the breakthroughs that turn ambitious companies into category-defining icons — at planetary scale.</p>
+          <p class="academy-pill" data-i18n="academy.pill">
+            <span class="academy-pill__dot" aria-hidden="true"></span>
+            Our developers are all certified by Anthropic Academy
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--gradient" href="#contact" data-i18n="hero.cta1">Architect Your Future</a>
+            <a class="btn btn--ghost" href="#ai" data-i18n="hero.cta2">Explore the AI practice</a>
+          </div>
+
+          <ul class="hero__stats">
+            <li><span class="hero__stat-v gradient-text" data-i18n="hero.stat1v">3 Continents</span><span class="hero__stat-l" data-i18n="hero.stat1l">Global Delivery Network</span></li>
+            <li><span class="hero__stat-v gradient-text" data-i18n="hero.stat2v">9 AI Disciplines</span><span class="hero__stat-l" data-i18n="hero.stat2l">From LLMs to MLOps</span></li>
+            <li><span class="hero__stat-v gradient-text">∞</span><span class="hero__stat-l" data-i18n="hero.stat3l">Ambition, Engineered</span></li>
+          </ul>
+        </div>
+
+        <!-- Intelligence Orbit -->
+        <div class="orbit" id="orbit" aria-label="Intelligence Orbit — the nine AI capabilities orbiting the Madrigal core">
+          <canvas id="orbitCanvas"></canvas>
+          <div class="orbit__core" aria-hidden="true">
+            <img src="assets/logo.png" alt="" class="orbit__core-mark" />
+          </div>
+          <div class="orbit__tooltip" id="orbitTooltip" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <section class="marquee" aria-label="AI capabilities">
+      <div class="marquee__track">
+        <span data-i18n="marquee">GENERATIVE AI · LLM APPS · COMPUTER VISION · NLP · RAG SYSTEMS · MLOps · AUTONOMOUS AGENTS · PREDICTIVE ANALYTICS · DEEP LEARNING · AI STRATEGY · </span>
+        <span aria-hidden="true" data-i18n="marquee">GENERATIVE AI · LLM APPS · COMPUTER VISION · NLP · RAG SYSTEMS · MLOps · AUTONOMOUS AGENTS · PREDICTIVE ANALYTICS · DEEP LEARNING · AI STRATEGY · </span>
+      </div>
+    </section>
+
+    <!-- ============ SCALE BAND ============ -->
+    <section class="band" aria-label="Scale and ambition">
+      <div class="band__divider" aria-hidden="true"></div>
+      <ul class="band__grid">
+        <li class="band__item reveal"><span class="band__v" data-count="3" data-suffix=" Continents" data-suffix-i18n="band.continents">0</span><span class="band__l" data-i18n="band.l1">Global delivery network</span></li>
+        <li class="band__item reveal"><span class="band__v" data-count="50" data-suffix="+ Specialists" data-suffix-i18n="band.specialists">0</span><span class="band__l" data-i18n="band.l2">Creative, engineering &amp; AI</span></li>
+        <li class="band__item reveal"><span class="band__v" data-count="9" data-suffix=" AI Disciplines" data-suffix-i18n="band.disciplines">0</span><span class="band__l" data-i18n="band.l3">From LLMs to MLOps</span></li>
+        <li class="band__item reveal"><span class="band__v">24/7</span><span class="band__l" data-i18n="band.l4">Global delivery, always on</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="section manifesto" id="manifesto">
+      <div class="container reveal">
+        <p class="eyebrow" data-i18n="manifesto.eyebrow">// GLOBAL BY DESIGN · BORDERLESS BY NATURE</p>
+        <h2 class="section__title" data-i18n-html="manifesto.title">Creative vision, deep tech, and AI — <span class="gradient-text">forged into one force.</span></h2>
+        <p class="section__lead" data-i18n="manifesto.lead">Unlocking Minds, Driving Brands.</p>
+        <p class="section__body" data-i18n="manifesto.body">Madrigal Consulting was forged to engineer the future of how brands think, move, and win. We are a single force where creative vision, deep technology, and frontier artificial intelligence converge — and where the line between imagination and execution disappears. From identity to infrastructure, from a campaign that captivates millions to autonomous systems that run while the world sleeps, we build the intelligence behind the brands that define their categories. Our reach spans continents; our standard answers to nothing less than extraordinary. This is consulting reimagined as a creative-tech-AI powerhouse — relentless, precise, and engineered to make the ambitious inevitable.</p>
+      </div>
+
+      <div class="container">
+        <div class="trust-strip reveal">
+          <span class="trust-strip__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span data-i18n="academy.badge">Anthropic Academy Certified Engineers</span>
+          </span>
+          <p class="trust-strip__text" data-i18n="academy.strip">Every developer at Madrigal is certified by Anthropic Academy — frontier-trained to build with Claude and architect production-grade AI that thinks, reasons, and ships. Credentialed expertise, not improvisation.</p>
+        </div>
+      </div>
+
+      <div class="container manifesto__cards">
+        <article class="glass-card tilt reveal">
+          <h3 data-i18n="manifesto.card1t">Intelligence Is Our Medium</h3>
+          <p data-i18n="manifesto.card1d">Generative AI, autonomous agents, computer vision, and predictive systems aren't features we bolt on — they're the architecture we build from. We design intelligence that learns, decides, and compounds, turning every dataset into a decisive advantage.</p>
+        </article>
+        <article class="glass-card tilt reveal">
+          <h3 data-i18n="manifesto.card2t">Beauty Is Non-Negotiable</h3>
+          <p data-i18n="manifesto.card2d">Brilliance that nobody feels is wasted. Every brand we shape, every interface we craft, every story we tell is engineered to be unforgettable — cinematic, exact, and impossible to ignore. We treat aesthetics as strategy, because attention is the rarest currency on earth.</p>
+        </article>
+        <article class="glass-card tilt reveal">
+          <h3 data-i18n="manifesto.card3t">No Borders, No Ceilings</h3>
+          <p data-i18n="manifesto.card3d">Across our global studios, we command an engine of elite talent and full-stack capability — strategy, software, hardware, data, and AI under one roof. Wherever ambition lives, we deliver it at scale, without compromise.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ AI FLAGSHIP ============ -->
+    <section class="section section--flagship" id="ai">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="index" data-num="01" data-i18n="ai.index">01 — ARTIFICIAL INTELLIGENCE</p>
+          <h2 class="section__title" data-i18n-html="ai.title">Intelligence is the new <span class="gradient-text">infrastructure.</span></h2>
+          <p class="section__lead" data-i18n="ai.lead">From frontier models to autonomous systems — engineered to think, learn, and move your brand at the speed of imagination.</p>
+          <p class="section__body" data-i18n="ai.body">Intelligence is the new infrastructure, and we build it to last. Madrigal designs AI systems that don't sit beside your business — they become its nervous system. We fuse generative models, deep learning, and autonomous agents into living architectures that reason in real time, learn from every interaction, and compound their advantage with each passing day. This is not automation bolted onto old workflows. It is intelligence engineered from first principles, tuned for production, and built to scale across continents. Where others experiment, we deploy. Where others prototype, we transform. The future belongs to the brands that command intelligence — and we put that power in your hands.</p>
+          <p class="academy-pill academy-pill--inline" data-i18n="academy.pill">
+            <span class="academy-pill__dot" aria-hidden="true"></span>
+            Our developers are all certified by Anthropic Academy
+          </p>
+        </div>
+
+        <figure class="section-figure reveal">
+          <img src="assets/img/ai-abstract.jpg" alt="Abstract artificial-intelligence visual with flowing blue digital forms" data-i18n-attr="alt:img.ai" loading="lazy" decoding="async" />
+        </figure>
+
+        <div class="ai-grid" id="aiGrid"></div>
+
+        <p class="manifesto-line gradient-text reveal" data-i18n="ai.line">We architect intelligence.</p>
+
+        <ul class="band__grid band__grid--inline reveal">
+          <li class="band__item"><span class="band__v gradient-text">9</span><span class="band__l" data-i18n="ai.b1">Frontier AI disciplines under one roof</span></li>
+          <li class="band__item"><span class="band__v gradient-text">24/7</span><span class="band__l" data-i18n="ai.b2">Autonomous agents that never sleep</span></li>
+          <li class="band__item"><span class="band__v gradient-text">100%</span><span class="band__l" data-i18n="ai.b3">Production-grade, built to scale</span></li>
+          <li class="band__item"><span class="band__v gradient-text">3</span><span class="band__l" data-i18n="ai.b4">Continents, singular vision</span></li>
+        </ul>
+
+        <div class="section__cta reveal"><a class="btn btn--gradient" href="#contact" data-i18n="ai.cta">Architect Your Intelligence</a></div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="index" data-num="02" data-i18n="services.index">02 — THE FULL ARSENAL</p>
+          <h2 class="section__title" data-i18n-html="services.title">Intelligence, engineered across every <span class="gradient-text">surface of your brand</span></h2>
+          <p class="section__lead" data-i18n="services.lead">AI is the engine. This is the machine it powers.</p>
+          <p class="section__body" data-i18n="services.body">Beyond our flagship AI practice lies a complete creative and engineering powerhouse — a single, vertically integrated force that takes a brand from first spark to global scale. Strategy, story, software, and signal, fused into one relentless pursuit of excellence. From three equal hubs to a borderless delivery network that spans the globe, Madrigal builds the brands that define their categories. Every service below is sharpened by the same intelligence layer — so nothing we touch is ordinary.</p>
+        </div>
+
+        <ul class="rows" id="serviceRows"></ul>
+
+        <div class="section__cta reveal"><a class="btn btn--gradient" href="#contact" data-i18n="services.cta">Build Your Category-Defining Brand</a></div>
+      </div>
+    </section>
+
+    <!-- ============ INFRASTRUCTURE & HOSTING ============ -->
+    <section class="section" id="hosting">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="index" data-num="03" data-i18n="hosting.index">03 — INFRASTRUCTURE &amp; HOSTING</p>
+          <h2 class="section__title" data-i18n-html="hosting.title">Your empire needs <span class="gradient-text">somewhere to live.</span></h2>
+          <p class="section__lead" data-i18n="hosting.lead">From the domain name to the data center — the full stack, owned and operated.</p>
+          <p class="section__body" data-i18n="hosting.body">Brilliance is nothing if it goes offline. Madrigal runs the entire backbone beneath your brand — domains, hosting, websites, and raw iron — engineered for uptime that borders on obsession. Blazing-fast, hardened, and globally distributed, our infrastructure carries everything we build and everything you dream up next. One partner, total ownership, zero excuses.</p>
+        </div>
+
+        <figure class="section-figure reveal">
+          <img src="assets/img/datacenter.jpg" alt="Rows of illuminated server racks in a dark modern data center" data-i18n-attr="alt:img.datacenter" loading="lazy" decoding="async" />
+        </figure>
+
+        <div class="ai-grid" id="hostingGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ ENGINEERED SOFTWARE ============ -->
+    <section class="section section--alt" id="software">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="index" data-num="04" data-i18n="software.index">04 — ENGINEERED SOFTWARE</p>
+          <h2 class="section__title" data-i18n-html="software.title">We've built the hardest software on earth. <span class="gradient-text">Yours is next.</span></h2>
+          <p class="section__lead" data-i18n="software.lead">Exchanges, wallets, banks, and blockchain intelligence — shipped to production, trusted with real money.</p>
+          <p class="section__body" data-i18n="software.body">When the stakes are highest — millions in motion, milliseconds that decide, regulators watching every byte — companies come to Madrigal. We've engineered the full crypto, fintech and data stack end to end: trading engines, custody, core banking, gaming intelligence and the AI that hunts illicit flows across the chain. If it can be coded, we can build it — faster, cleaner, and at a price the market simply cannot match.</p>
+        </div>
+
+        <figure class="section-figure reveal">
+          <img src="assets/img/blockchain-network.jpg" alt="Abstract glowing blockchain network of connected blue nodes and links" data-i18n-attr="alt:img.blockchain" loading="lazy" decoding="async" />
+        </figure>
+
+        <div class="ai-grid">
+          <article class="glass-card ai-card tilt reveal">
+            <div class="ai-card__glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path stroke="currentColor" d="M4 7h13l-3-3M20 17H7l3 3"/></svg></div>
+            <span class="tag" data-i18n="sw1.tag">Trading Infrastructure</span>
+            <h3 data-i18n="sw1.t">Crypto Exchanges</h3>
+            <p data-i18n="sw1.d">Matching engines, order books, custody, liquidity and KYC — complete spot &amp; derivatives platforms tuned for microsecond latency and millions of concurrent users without breaking a sweat.</p>
+          </article>
+
+          <article class="glass-card ai-card tilt reveal">
+            <div class="ai-card__glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect stroke="currentColor" x="6" y="6" width="12" height="12" rx="2"/><path stroke="currentColor" d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg></div>
+            <span class="tag" data-i18n="sw2.tag">Cold Custody</span>
+            <h3 data-i18n="sw2.t">Crypto Hardware Wallets</h3>
+            <p data-i18n="sw2.d">Secure-element firmware, seed isolation and tamper-proof signing. Self-custody devices engineered so private keys are born — and stay — beyond the reach of the outside world.</p>
+          </article>
+
+          <article class="glass-card ai-card tilt reveal">
+            <div class="ai-card__glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path stroke="currentColor" d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path stroke="currentColor" d="M16 12h3"/><path stroke="currentColor" d="M12 8l-2 4h3l-2 4"/></svg></div>
+            <span class="tag" data-i18n="sw3.tag">On-Chain Custody</span>
+            <h3 data-i18n="sw3.t">Crypto Hot Wallets</h3>
+            <p data-i18n="sw3.d">Lightning-fast multi-chain hot wallets with MPC &amp; multisig, real-time balances and hardened key management — built to move billions in daily volume, securely and instantly.</p>
+          </article>
+
+          <article class="glass-card ai-card tilt reveal">
+            <div class="ai-card__glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path stroke="currentColor" d="M3 9l9-5 9 5"/><path stroke="currentColor" d="M5 9v8M10 9v8M14 9v8M19 9v8M3 20h18"/></svg></div>
+            <span class="tag" data-i18n="sw4.tag">Core Banking</span>
+            <h3 data-i18n="sw4.t">Fintech &amp; Banking</h3>
+            <p data-i18n="sw4.d">Core banking, payments, cards, ledgers and onboarding — regulator-ready financial software engineered to move money flawlessly, reconcile to the cent, and scale to a nation.</p>
+          </article>
+
+          <article class="glass-card ai-card tilt reveal">
+            <div class="ai-card__glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path stroke="currentColor" d="M7 8h10a4 4 0 0 1 4 4v1a3 3 0 0 1-5.5 1.8L14 13h-4l-1.5 1.8A3 3 0 0 1 3 13v-1a4 4 0 0 1 4-4z"/><path stroke="currentColor" d="M7 11v2M6 12h2M16 11.5v.01M17.5 13v.01"/></svg></div>
+            <span class="tag" data-i18n="sw5.tag">Real-Time Intelligence</span>
+            <h3 data-i18n="sw5.t">Gaming Big Data &amp; AI</h3>
+            <p data-i18n="sw5.d">Player analytics, live recommendation and anti-fraud AI crunching billions of events in real time — turning raw game telemetry into retention, revenue and decisive advantage.</p>
+          </article>
+
+          <article class="glass-card ai-card tilt reveal">
+            <div class="ai-card__glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path stroke="currentColor" d="M12 3l7 3v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z"/><path stroke="currentColor" d="M9 12l2 2 4-4"/></svg></div>
+            <span class="tag" data-i18n="sw6.tag">RegTech</span>
+            <h3 data-i18n="sw6.t">AML &amp; Compliance</h3>
+            <p data-i18n="sw6.d">Sanctions &amp; PEP screening, transaction monitoring, KYC/KYB and case management — compliance engines engineered to satisfy the strictest regulators on the planet.</p>
+          </article>
+
+          <article class="glass-card ai-card tilt reveal">
+            <div class="ai-card__glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle stroke="currentColor" cx="6" cy="6" r="2.2"/><circle stroke="currentColor" cx="18" cy="7" r="2.2"/><circle stroke="currentColor" cx="12" cy="17" r="2.2"/><path stroke="currentColor" d="M7.8 7.3l2.6 8M16.3 8.6l-3 6.8M8.1 6.5h7.8"/></svg></div>
+            <span class="tag" data-i18n="sw7.tag">On-Chain Forensics</span>
+            <h3 data-i18n="sw7.t">Blockchain Analysis</h3>
+            <p data-i18n="sw7.d">Wallet attribution, fund tracing and cross-chain risk scoring — forensic intelligence that follows the money wherever it tries to hide, and surfaces the truth in seconds.</p>
+          </article>
+        </div>
+
+        <div class="pitch reveal">
+          <p class="eyebrow" data-i18n="pitch.eyebrow">// NO LIMITS, NO EXCUSES</p>
+          <p class="manifesto-line gradient-text" data-i18n="pitch.line">Any software. Built faster. Priced to win.</p>
+          <p class="pitch__sub" data-i18n="pitch.sub">You bring the idea — we make it reality. Whatever you can imagine, we can engineer: at unbeatable prices, in timelines that look impossible, with production-grade quality that never blinks. From a napkin sketch to a category-defining product, Madrigal turns ambition into shipped software.</p>
+          <div class="section__cta"><a class="btn btn--gradient" href="#contact" data-i18n="pitch.cta">Bring Us Your Idea</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY MADRIGAL / WORK ============ -->
+    <section class="section section--alt" id="work">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="index" data-num="05" data-i18n="work.index">05 — THE MADRIGAL DIFFERENCE</p>
+          <h2 class="section__title" data-i18n-html="work.title">Where creativity meets <span class="gradient-text">intelligence at scale</span></h2>
+          <p class="section__lead" data-i18n="work.lead">Not an agency. Not a software shop. A force multiplier for ambitious brands.</p>
+          <p class="section__body" data-i18n="work.body">Most consultancies pick a lane. We refuse to. Madrigal fuses world-class creative, hard engineering, and frontier AI under one roof — forged across our global studios, delivered across the globe. We don't just use AI; we architect intelligence. The result is work that thinks faster, scales further, and moves brands from where they are to where they were always meant to be. Unlocking minds. Driving brands.</p>
+        </div>
+
+        <div class="why-grid" id="whyGrid"></div>
+
+        <ul class="band__grid band__grid--inline reveal">
+          <li class="band__item"><span class="band__v" data-count="1" data-suffix="B+">0</span><span class="band__l" data-i18n="work.b1">Data points processed every day</span></li>
+          <li class="band__item"><span class="band__v" data-count="40" data-suffix="+">0</span><span class="band__l" data-i18n="work.b2">Countries reached through global delivery</span></li>
+          <li class="band__item"><span class="band__v" data-count="98" data-suffix="%">0</span><span class="band__l" data-i18n="work.b3">Client retention, year after year</span></li>
+          <li class="band__item"><span class="band__v" data-count="200" data-suffix="+">0</span><span class="band__l" data-i18n="work.b4">Creative, engineering &amp; AI experts</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="index" data-num="06" data-i18n="process.index">06 — HOW WE WORK</p>
+          <h2 class="section__title" data-i18n-html="process.title">From first spark to <span class="gradient-text">global scale</span></h2>
+          <p class="section__lead" data-i18n="process.lead">A precision methodology engineered for ambition.</p>
+          <p class="section__body" data-i18n="process.body">Brilliance is not an accident. Behind every breakthrough we ship lies a discipline as rigorous as it is bold. Four movements take you from the unknown to the unstoppable — discovery that sees what others miss, design that bends the future to your will, engineering that turns intelligence into infrastructure, and scale that knows no horizon. This is how vision becomes velocity.</p>
+        </div>
+
+        <ol class="flow" id="flow"></ol>
+
+        <div class="section__cta reveal"><a class="btn btn--gradient" href="#contact" data-i18n="process.cta">Begin Your Ascent</a></div>
+      </div>
+    </section>
+
+    <!-- ============ GLOBAL REACH ============ -->
+    <section class="section section--alt" id="global">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="index" data-num="07" data-i18n="global.index">07 — GLOBAL REACH</p>
+          <h2 class="section__title" data-i18n-html="global.title">Three command centers. <span class="gradient-text">Borderless delivery.</span></h2>
+          <p class="section__lead" data-i18n="global.lead">From Hong Kong to Lugano to Italy — and every market that matters.</p>
+          <p class="section__body" data-i18n="global.body">Three command centers of equal weight — Hong Kong, Switzerland, and Italy — anchor us across Asia and Europe, at the crossroads of global capital, culture, and code. Together they orchestrate elite talent and deliver around the clock to every market on earth. While one continent sleeps, another ships — intelligence, creativity, and engineering moving in perfect sequence, anywhere in the world, at the speed your ambition demands.</p>
+        </div>
+
+        <div class="reach reveal">
+          <div class="reach__map">
+            <canvas id="reachCanvas"></canvas>
+          </div>
+          <div class="reach__cards">
+            <article class="glass-card tilt"><h3 data-i18n="reach.c1t">Three Equal Hubs</h3><p data-i18n="reach.c1d">Hong Kong, Switzerland, and Italy carry equal weight — three command centers spanning Asia and Europe, fluent in East and West and wired into the markets that define tomorrow.</p></article>
+            <article class="glass-card tilt"><h3 data-i18n="reach.c2t">Delivered Worldwide</h3><p data-i18n="reach.c2d">From our hubs we deliver to every corner of the globe — no market too distant, no time zone out of reach. Wherever your ambition lives, we are already there.</p></article>
+            <article class="glass-card tilt"><h3 data-i18n="reach.c3t">The Sun Never Sets</h3><p data-i18n="reach.c3d">Follow-the-sun delivery turns time zones into momentum. Work advances while the world sleeps, so progress is relentless and deadlines bend to us.</p></article>
+          </div>
+        </div>
+
+        <div class="offices" id="offices"></div>
+
+        <ul class="band__grid band__grid--inline reveal">
+          <li class="band__item"><span class="band__v gradient-text">24/7</span><span class="band__l" data-i18n="global.b1">Follow-the-sun delivery across every time zone</span></li>
+          <li class="band__item"><span class="band__v gradient-text" data-i18n="global.b2v">3 Offices</span><span class="band__l" data-i18n="global.b2">Hong Kong · Lugano · Italy</span></li>
+          <li class="band__item"><span class="band__v" data-count="15" data-suffix="+">0</span><span class="band__l" data-i18n="global.b3">Languages spoken across our global teams</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section--cta" id="contact">
+      <div class="aurora aurora--soft" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--3"></span>
+      </div>
+      <div class="container reveal">
+        <div class="cta-core" aria-hidden="true"><img src="assets/logo.png" alt="" /></div>
+        <p class="eyebrow" data-i18n="contact.eyebrow">// LET'S BUILD WHAT'S NEXT</p>
+        <h2 class="section__title" data-i18n-html="contact.title">The future doesn't wait.<br /><span class="gradient-text">Neither should you.</span></h2>
+        <p class="section__lead" data-i18n="contact.lead">From Hong Kong to every corner of the globe — intelligence, delivered.</p>
+        <p class="section__body section__body--center" data-i18n="contact.body">Every empire begins with a single conversation. Tell us the future you're chasing, and we'll architect the intelligence to reach it — faster, bolder, and further than you imagined possible. One message is all it takes to set extraordinary in motion.</p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="cf-name" data-i18n="contact.name">Name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required placeholder="Your name" data-i18n-attr="placeholder:contact.namePh" />
+          </div>
+          <div class="field">
+            <label for="cf-email" data-i18n="contact.email">Email</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" data-i18n-attr="placeholder:contact.emailPh" />
+          </div>
+          <div class="field">
+            <label for="cf-company" data-i18n="contact.company">Company</label>
+            <input id="cf-company" name="company" type="text" autocomplete="organization" placeholder="Company (optional)" data-i18n-attr="placeholder:contact.companyPh" />
+          </div>
+          <div class="field field--full">
+            <label for="cf-message" data-i18n="contact.message">What future are you chasing?</label>
+            <textarea id="cf-message" name="message" rows="4" required placeholder="Tell us about your ambition…" data-i18n-attr="placeholder:contact.messagePh"></textarea>
+          </div>
+          <div class="field field--full contact-form__actions">
+            <button class="btn btn--gradient" type="submit" data-i18n="contact.submit">Start the Conversation</button>
+            <p class="contact-form__note" id="formNote" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <ul class="contact-meta">
+          <li><span class="contact-meta__k" data-i18n="contact.metaEmail">Email</span><a href="mailto:hello@madrigalconsulting.io">hello@madrigalconsulting.io</a></li>
+          <li><span class="contact-meta__k" data-i18n="contact.metaHq">Offices</span><span data-i18n="contact.metaHqV">Hong Kong · Switzerland · Italy</span></li>
+          <li><span class="contact-meta__k" data-i18n="contact.metaEu">Delivery</span><span data-i18n="contact.metaEuV">Worldwide</span></li>
+          <li><span class="contact-meta__k" data-i18n="contact.metaWorld">Hours</span><span data-i18n="contact.metaWorldV">24/7 · follow-the-sun</span></li>
+        </ul>
+
+        <p class="tagline gradient-text" data-i18n="contact.tagline">Unlocking Minds, Driving Brands</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <canvas class="footer__stars" id="starCanvas" aria-hidden="true"></canvas>
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img class="footer__logo" src="assets/logo.png" alt="Madrigal Consulting logo" width="170" height="46" />
+        <p data-i18n="footer.brand">Unlocking Minds, Driving Brands. A premium creative, technology &amp; AI consultancy.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Footer — Practice">
+        <h3 data-i18n="footer.practice">Practice</h3>
+        <a href="#ai" data-i18n="footer.p1">Artificial Intelligence</a>
+        <a href="#services" data-i18n="footer.p2">Digital Marketing</a>
+        <a href="#hosting" data-i18n="footer.p3">Hosting &amp; Infrastructure</a>
+        <a href="#software" data-i18n="footer.p4">Engineered Software</a>
+        <a href="#services" data-i18n="footer.p5">Data &amp; Analytics</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Footer — Company">
+        <h3 data-i18n="footer.company">Company</h3>
+        <a href="#work" data-i18n="footer.c1">Why Madrigal</a>
+        <a href="#process" data-i18n="footer.c2">Our Approach</a>
+        <a href="#global" data-i18n="footer.c3">Global Reach</a>
+        <a href="#contact" data-i18n="footer.c4">Contact</a>
+      </nav>
+
+      <div class="footer__col">
+        <h3 data-i18n="footer.offices">Our Offices</h3>
+        <p class="footer__addr">
+          <strong data-i18n="footer.off1t">Hong Kong</strong> — <span data-i18n="footer.off1r">Asia</span><br />
+          <strong data-i18n="footer.off2t">Lugano</strong> — <span data-i18n="footer.off2r">Switzerland</span><br />
+          <strong data-i18n="footer.off3t">Milan</strong> — <span data-i18n="footer.off3r">Italy</span><br />
+          <span data-i18n="footer.off.delivery">Global delivery · 24/7</span>
+        </p>
+        <a href="mailto:hello@madrigalconsulting.io">hello@madrigalconsulting.io</a>
+        <div class="footer__social" aria-label="Social links">
+          <a href="#" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8.5h4V24h-4V8.5zM8 8.5h3.8v2.1h.05c.53-1 1.83-2.1 3.77-2.1 4.03 0 4.78 2.65 4.78 6.1V24h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V24H8V8.5z"/></svg></a>
+          <a href="#" aria-label="X" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2H21l-6.5 7.4L22 22h-6.1l-4.8-6.3L5.6 22H3l7-7.9L2 2h6.2l4.3 5.7L18.2 2zm-1 18h1.7L7.9 3.9H6.1L17.2 20z"/></svg></a>
+          <a href="#" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.22 1 .48 1.4.9.43.42.7.82.9 1.4.18.45.38 1.05.43 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2-.22.6-.48 1-.9 1.4-.42.43-.82.7-1.4.9-.45.18-1.05.38-2.2.43-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42-.6-.22-1-.48-1.4-.9-.43-.42-.7-.82-.9-1.4-.18-.45-.38-1.05-.43-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.42-.43.82-.7 1.4-.9.45-.18 1.05-.38 2.2-.43C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-.9.04-1.4.2-1.7.32-.43.17-.74.37-1.06.7-.32.31-.52.62-.7 1.05-.12.3-.28.8-.32 1.7C3.25 9.05 3.24 9.4 3.24 12s0 2.95.07 4.16c.04.9.2 1.4.32 1.7.17.43.37.74.7 1.06.31.32.62.52 1.05.7.3.12.8.28 1.7.32 1.2.06 1.6.07 4.7.07s3.5 0 4.7-.07c.9-.04 1.4-.2 1.7-.32.43-.17.74-.37 1.06-.7.32-.31.52-.62.7-1.05.12-.3.28-.8.32-1.7.06-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.04-.9-.2-1.4-.32-1.7-.17-.43-.37-.74-.7-1.06-.31-.32-.62-.52-1.05-.7-.3-.12-.8-.28-1.7-.32-1.2-.06-1.6-.07-4.7-.07zm0 3.06A4.94 4.94 0 1 1 12 17.1a4.94 4.94 0 0 1 0-10.04zm0 8.14a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zm6.3-8.34a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bar">
+      <p data-i18n="footer.copyright">© 2026 Madrigal Consulting Limited — Hong Kong · Lugano · Italy</p>
+      <p class="footer__fine" data-i18n="footer.fine">This site uses no tracking cookies.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

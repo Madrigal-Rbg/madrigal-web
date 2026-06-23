@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-label="Abstract node network">
+  <defs>
+    <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#23B4EC"/>
+      <stop offset="0.45" stop-color="#1379C2"/>
+      <stop offset="0.75" stop-color="#0C5FB0"/>
+      <stop offset="1" stop-color="#6E8BFF"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#23B4EC" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#23B4EC" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+  <g opacity="0.55" filter="url(#soft)">
+    <circle cx="300" cy="220" r="120" fill="url(#glow)"/>
+    <circle cx="880" cy="430" r="160" fill="url(#glow)"/>
+  </g>
+  <g stroke="url(#hg)" stroke-width="1.4" opacity="0.7" fill="none">
+    <path d="M180 180 L420 120 L640 250 L900 170 L1040 320"/>
+    <path d="M180 180 L300 360 L520 420 L760 360 L900 480"/>
+    <path d="M300 360 L420 120"/>
+    <path d="M520 420 L640 250"/>
+    <path d="M760 360 L900 170"/>
+    <path d="M520 420 L900 480"/>
+    <path d="M640 250 L760 360"/>
+    <path d="M1040 320 L900 480"/>
+    <path d="M180 540 L420 560 L640 470 L520 420"/>
+    <path d="M420 560 L760 600 L900 480"/>
+  </g>
+  <g fill="url(#hg)">
+    <circle cx="180" cy="180" r="7"/><circle cx="420" cy="120" r="9"/>
+    <circle cx="640" cy="250" r="11"/><circle cx="900" cy="170" r="8"/>
+    <circle cx="1040" cy="320" r="7"/><circle cx="300" cy="360" r="9"/>
+    <circle cx="520" cy="420" r="13"/><circle cx="760" cy="360" r="9"/>
+    <circle cx="900" cy="480" r="11"/><circle cx="180" cy="540" r="7"/>
+    <circle cx="420" cy="560" r="9"/><circle cx="640" cy="470" r="8"/>
+    <circle cx="760" cy="600" r="7"/>
+  </g>
+  <g fill="#fff" opacity="0.85">
+    <circle cx="640" cy="250" r="3"/><circle cx="520" cy="420" r="3.5"/>
+    <circle cx="900" cy="480" r="3"/>
+  </g>
+</svg>

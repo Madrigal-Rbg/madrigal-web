@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" role="img" aria-label="Blockchain cubes linked in a chain">
+  <defs>
+    <linearGradient id="ct" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#23B4EC"/><stop offset="1" stop-color="#1379C2"/>
+    </linearGradient>
+    <linearGradient id="cl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1379C2"/><stop offset="1" stop-color="#0C5FB0"/>
+    </linearGradient>
+    <linearGradient id="cr" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C5FB0"/><stop offset="1" stop-color="#6E8BFF"/>
+    </linearGradient>
+  </defs>
+  <!-- one isometric cube via group transform; w=120 -->
+  <g stroke="#9fd8f5" stroke-width="1" stroke-opacity="0.25">
+    <!-- cube template repeated; define inline -->
+    <g transform="translate(120,170)">
+      <polygon points="0,0 60,-34 120,0 60,34" fill="url(#ct)"/>
+      <polygon points="0,0 0,70 60,104 60,34" fill="url(#cl)"/>
+      <polygon points="120,0 120,70 60,104 60,34" fill="url(#cr)"/>
+    </g>
+    <g transform="translate(360,170)">
+      <polygon points="0,0 60,-34 120,0 60,34" fill="url(#ct)"/>
+      <polygon points="0,0 0,70 60,104 60,34" fill="url(#cl)"/>
+      <polygon points="120,0 120,70 60,104 60,34" fill="url(#cr)"/>
+    </g>
+    <g transform="translate(600,170)">
+      <polygon points="0,0 60,-34 120,0 60,34" fill="url(#ct)"/>
+      <polygon points="0,0 0,70 60,104 60,34" fill="url(#cl)"/>
+      <polygon points="120,0 120,70 60,104 60,34" fill="url(#cr)"/>
+    </g>
+  </g>
+  <!-- connecting links -->
+  <g stroke="#23B4EC" stroke-width="4" stroke-linecap="round" opacity="0.85">
+    <line x1="240" y1="170" x2="360" y2="170"/>
+    <line x1="480" y1="170" x2="600" y2="170"/>
+  </g>
+  <g fill="#6E8BFF">
+    <circle cx="300" cy="170" r="6"/><circle cx="540" cy="170" r="6"/>
+  </g>
+</svg>
