@@ -5,6 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page not found — Madrigal Consulting</title>
   <meta name="robots" content="noindex" />
+
+  <!-- Smart redirect: the new site is single-page, so legacy URLs from the old
+       site (e.g. /IT-Outsourcing/, /Contact/) map to the matching section.
+       Runs before paint; unknown paths fall through to the 404 content below. -->
+  <script>
+    (function () {
+      var seg = location.pathname.toLowerCase().replace(/^\/+|\/+$/g, "").split("/")[0];
+      var map = {
+        "ai": "ai", "artificial-intelligence": "ai", "intelligenza-artificiale": "ai",
+        "services": "services", "servizi": "services", "digital-marketing": "services",
+        "marketing": "services", "brand-development": "services", "branding": "services",
+        "content-creation": "services", "content": "services", "data-analytics": "services",
+        "data": "services", "analytics": "services", "mobile": "services", "iot": "services",
+        "it-outsourcing": "services", "it-outsourcing-software": "services", "outsourcing": "services",
+        "software": "software", "software-development": "software", "sviluppo-software": "software",
+        "crypto": "software", "fintech": "software", "blockchain": "software", "wallet": "software",
+        "hosting": "hosting", "infrastructure": "hosting", "infrastruttura": "hosting",
+        "domains": "hosting", "domini": "hosting", "servers": "hosting", "server": "hosting",
+        "work": "work", "why-madrigal": "work", "about": "work", "about-us": "work", "chi-siamo": "work",
+        "process": "process", "approach": "process", "metodo": "process", "how-we-work": "process",
+        "global": "global", "global-reach": "global", "reach": "global", "offices": "global", "sedi": "global",
+        "contact": "contact", "contacts": "contact", "contatti": "contact", "contattaci": "contact"
+      };
+      if (Object.prototype.hasOwnProperty.call(map, seg)) {
+        location.replace("/#" + map[seg]);
+      }
+    })();
+  </script>
   <meta name="theme-color" content="#060A14" />
   <link rel="icon" type="image/png" sizes="196x196" href="assets/favicon-196.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
