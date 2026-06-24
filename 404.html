@@ -7,29 +7,43 @@
   <meta name="robots" content="noindex" />
 
   <!-- Smart redirect: the new site is single-page, so legacy URLs from the old
-       site (e.g. /IT-Outsourcing/, /Contact/) map to the matching section.
-       Runs before paint; unknown paths fall through to the 404 content below. -->
+       CM4all site (e.g. /IT-Outsourcing/, /Contact-Us/, and the broken
+       /https/-/madrigalconsulting-io/ canonical) map to the matching section.
+       Keyword-based so hyphenated variants are caught generically. Runs before
+       paint; unrecognized paths fall through to the branded 404 below. -->
   <script>
     (function () {
-      var seg = location.pathname.toLowerCase().replace(/^\/+|\/+$/g, "").split("/")[0];
-      var map = {
-        "ai": "ai", "artificial-intelligence": "ai", "intelligenza-artificiale": "ai",
-        "services": "services", "servizi": "services", "digital-marketing": "services",
-        "marketing": "services", "brand-development": "services", "branding": "services",
-        "content-creation": "services", "content": "services", "data-analytics": "services",
-        "data": "services", "analytics": "services", "mobile": "services", "iot": "services",
-        "it-outsourcing": "services", "it-outsourcing-software": "services", "outsourcing": "services",
-        "software": "software", "software-development": "software", "sviluppo-software": "software",
-        "crypto": "software", "fintech": "software", "blockchain": "software", "wallet": "software",
-        "hosting": "hosting", "infrastructure": "hosting", "infrastruttura": "hosting",
-        "domains": "hosting", "domini": "hosting", "servers": "hosting", "server": "hosting",
-        "work": "work", "why-madrigal": "work", "about": "work", "about-us": "work", "chi-siamo": "work",
-        "process": "process", "approach": "process", "metodo": "process", "how-we-work": "process",
-        "global": "global", "global-reach": "global", "reach": "global", "offices": "global", "sedi": "global",
-        "contact": "contact", "contacts": "contact", "contatti": "contact", "contattaci": "contact"
-      };
-      if (Object.prototype.hasOwnProperty.call(map, seg)) {
-        location.replace("/#" + map[seg]);
+      var path = location.pathname.toLowerCase();
+      // Old CM4all broken home/canonical link -> homepage
+      if (path.indexOf("madrigalconsulting-io") !== -1 || /^\/https?\//.test(path)) {
+        location.replace("/"); return;
+      }
+      var seg = path.replace(/^\/+|\/+$/g, "").split("/")[0].replace(/_/g, "-");
+      if (!seg) return;
+      // keyword -> section (ordered: most specific first; avoids ambiguous short tokens)
+      var rules = [
+        ["penetration", "cyber"], ["pentest", "cyber"], ["red-team", "cyber"], ["redteam", "cyber"],
+        ["vulnerab", "cyber"], ["cyber", "cyber"], ["security", "cyber"], ["secure-code", "cyber"],
+        ["code-review", "cyber"], ["code-audit", "cyber"], ["audit", "cyber"], ["compliance", "cyber"],
+        ["infosec", "cyber"], ["threat", "cyber"], ["forensic", "cyber"],
+        ["artificial", "ai"], ["intelligence", "ai"], ["machine-learning", "ai"], ["deep-learning", "ai"],
+        ["generative", "ai"], ["llm", "ai"], ["mlops", "ai"], ["computer-vision", "ai"], ["chatbot", "ai"], ["agent", "ai"],
+        ["outsourcing", "services"], ["digital-marketing", "services"], ["marketing", "services"],
+        ["branding", "services"], ["brand", "services"], ["content", "services"], ["seo", "services"],
+        ["analytics", "services"], ["mobile", "services"], ["iot", "services"], ["service", "services"], ["servizi", "services"],
+        ["software", "software"], ["development", "software"], ["fintech", "software"], ["crypto", "software"],
+        ["blockchain", "software"], ["wallet", "software"], ["exchange", "software"], ["banking", "software"], ["aml", "software"],
+        ["hosting", "hosting"], ["domain", "hosting"], ["domini", "hosting"], ["server", "hosting"],
+        ["infrastructure", "hosting"], ["infrastruttura", "hosting"], ["cloud", "hosting"],
+        ["process", "process"], ["approach", "process"], ["metodo", "process"], ["how-we-work", "process"],
+        ["about", "work"], ["who-we-are", "work"], ["chi-siamo", "work"], ["company", "work"],
+        ["why-madrigal", "work"], ["team", "work"], ["portfolio", "work"], ["case-stud", "work"], ["work", "work"],
+        ["global", "global"], ["office", "global"], ["location", "global"], ["presence", "global"], ["sedi", "global"],
+        ["contact", "contact"], ["contatti", "contact"], ["get-in-touch", "contact"], ["touch", "contact"],
+        ["enquir", "contact"], ["inquir", "contact"], ["reach-us", "contact"]
+      ];
+      for (var i = 0; i < rules.length; i++) {
+        if (seg.indexOf(rules[i][0]) !== -1) { location.replace("/#" + rules[i][1]); return; }
       }
     })();
   </script>
