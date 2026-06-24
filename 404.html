@@ -14,13 +14,28 @@
   <script>
     (function () {
       var path = location.pathname.toLowerCase();
+      function go(s) { location.replace(s === "home" ? "/" : "/#" + s); }
       // Old CM4all broken home/canonical link -> homepage
       if (path.indexOf("madrigalconsulting-io") !== -1 || /^\/https?\//.test(path)) {
         location.replace("/"); return;
       }
       var seg = path.replace(/^\/+|\/+$/g, "").split("/")[0].replace(/_/g, "-");
       if (!seg) return;
-      // keyword -> section (ordered: most specific first; avoids ambiguous short tokens)
+      // Exact matches first — precise for short/ambiguous tokens and utility/legal
+      // pages that have no dedicated section (those go to the homepage).
+      var exact = {
+        "ai": "ai", "home": "home", "index": "home", "homepage": "home",
+        "blog": "home", "news": "home", "faq": "home", "faqs": "home", "sitemap": "home",
+        "privacy": "home", "privacy-policy": "home", "cookie-policy": "home", "cookies": "home",
+        "terms": "home", "terms-of-service": "home", "terms-and-conditions": "home",
+        "legal": "home", "impressum": "home", "imprint": "home",
+        "pricing": "contact", "prezzi": "contact", "quote": "contact",
+        "clients": "work", "careers": "work", "career": "work", "jobs": "work", "why-us": "work", "team": "work",
+        "hong-kong": "global", "hongkong": "global", "lugano": "global",
+        "milan": "global", "milano": "global", "switzerland": "global", "italy": "global"
+      };
+      if (Object.prototype.hasOwnProperty.call(exact, seg)) { go(exact[seg]); return; }
+      // Keyword-contains fallback (ordered: most specific first; no ambiguous short tokens)
       var rules = [
         ["penetration", "cyber"], ["pentest", "cyber"], ["red-team", "cyber"], ["redteam", "cyber"],
         ["vulnerab", "cyber"], ["cyber", "cyber"], ["security", "cyber"], ["secure-code", "cyber"],
@@ -36,14 +51,14 @@
         ["hosting", "hosting"], ["domain", "hosting"], ["domini", "hosting"], ["server", "hosting"],
         ["infrastructure", "hosting"], ["infrastruttura", "hosting"], ["cloud", "hosting"],
         ["process", "process"], ["approach", "process"], ["metodo", "process"], ["how-we-work", "process"],
-        ["about", "work"], ["who-we-are", "work"], ["chi-siamo", "work"], ["company", "work"],
-        ["why-madrigal", "work"], ["team", "work"], ["portfolio", "work"], ["case-stud", "work"], ["work", "work"],
-        ["global", "global"], ["office", "global"], ["location", "global"], ["presence", "global"], ["sedi", "global"],
+        ["about", "work"], ["who-we-are", "work"], ["chi-siamo", "work"], ["company", "work"], ["why", "work"],
+        ["client", "work"], ["career", "work"], ["job", "work"], ["portfolio", "work"], ["case-stud", "work"], ["work", "work"],
+        ["global", "global"], ["office", "global"], ["location", "global"], ["presence", "global"], ["sedi", "global"], ["hong", "global"],
         ["contact", "contact"], ["contatti", "contact"], ["get-in-touch", "contact"], ["touch", "contact"],
-        ["enquir", "contact"], ["inquir", "contact"], ["reach-us", "contact"]
+        ["enquir", "contact"], ["inquir", "contact"], ["reach-us", "contact"], ["pricing", "contact"], ["price", "contact"]
       ];
       for (var i = 0; i < rules.length; i++) {
-        if (seg.indexOf(rules[i][0]) !== -1) { location.replace("/#" + rules[i][1]); return; }
+        if (seg.indexOf(rules[i][0]) !== -1) { go(rules[i][1]); return; }
       }
     })();
   </script>
